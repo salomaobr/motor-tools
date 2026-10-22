@@ -4,7 +4,7 @@
 
 `motor-tools` is a stateless, fail-soft Python library with 25 MCP/HTTP tools for anomaly detection, structural monitoring, evidence gating, and symbolic discovery. Built on NumPy and custom statistical primitives, it acts as the "reliability layer" for autonomous agents and critical systems.
 
-![tests](https://img.shields.io/badge/tests-249%20passed-brightgreen) ![python](https://img.shields.io/badge/python-3.10%2B-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![tools](https://img.shields.io/badge/tools-25-informational)
+![tests](https://img.shields.io/badge/tests-277%20passed-brightgreen) ![python](https://img.shields.io/badge/python-3.10%2B-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![tools](https://img.shields.io/badge/tools-25-informational)
 
 ## 🏆 Validated Case Studies (Real Data)
 

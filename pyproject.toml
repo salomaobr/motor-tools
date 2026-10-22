@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "motor-tools"
+version = "0.8.1"
+description = "Stateless JSON tools for any AI: statistics, monitoring, evidence gates, evaluation batteries and symbolic discovery (MCP + HTTP)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+    { name = "motor-tools contributors" }
+]
+keywords = ["statistics", "mcp", "tools", "monitoring", "sign-test", "novelty", "staleness", "symbolic-discovery"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "numpy",
+    "mcp>=1.2",
+    "fastapi",
+    "uvicorn",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx"]
+
+[project.urls]
+Homepage = "https://github.com/salomaobr/motor-tools"
+Documentation = "https://github.com/salomaobr/motor-tools#readme"
+
+[project.scripts]
+motor-tools = "motor_tools.__main__:main"
+motor-tools-mcp = "motor_tools.mcp_server:mcp.run"
+
+[tool.setuptools.packages.find]
+# Só motor_tools e seus subpacotes (motor_tools.motor, motor_tools.domains).
+# Nada de "motor", "domains", "core" ou "runtime" no namespace do usuário.
+include = ["motor_tools", "motor_tools.*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "mcp: requires the mcp package and a working stdio server",
+    "http: requires fastapi and httpx",
+]
